@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GyandhaaraLibrary.ViewModel.BookListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row clearfix">
+    <div class="col-sm-4">
+        <div class="btn-group">
+            <div class="btn-group">
+                <a href="@Url.Action("Create", "Genre")" class="btn btn-success" role="button"><span class="control-label glyphicon glyphicon-plus" id="Span4"></span></a>
+                <a href="@Url.Action("Create", "Genre")" class="btn btn-success" role="button">New</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8"></div>
+</div>
+
+<table class="table table-hover">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "Book", new { id = item.BookID })">
+                    <span class="glyphicon glyphicon-th-list" id="details-product"></span>
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Book", new {id = item.BookID })">
+                    <span class="glyphicon glyphicon-edit" id="edit-product"></span>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

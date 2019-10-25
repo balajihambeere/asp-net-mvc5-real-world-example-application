@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BC66F149-7F63-4998-A99C-5ED3869157EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{E967134B-E325-4F62-A063-5A8D000D36C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.DataModel", "Data\GyandhaaraLibrary.DataModel\GyandhaaraLibrary.DataModel.csproj", "{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.Data", "Data\GyandhaaraLibrary.Data\GyandhaaraLibrary.Data.csproj", "{9C85345D-4F1D-41D2-8C09-26E392EDB544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.DataMapping", "Data\GyandhaaraLibrary.DataMapping\GyandhaaraLibrary.DataMapping.csproj", "{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.Service.Interfaces", "Service\GyandhaaraLibrary.Service.Interfaces\GyandhaaraLibrary.Service.Interfaces.csproj", "{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.Service", "Service\GyandhaaraLibrary.Service\GyandhaaraLibrary.Service.csproj", "{B126D7C2-1679-48C5-B028-703DA1175813}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3AB0414B-D5D9-41B2-AA11-24A6A72DDBF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.UnitTest", "Tests\GyandhaaraLibrary.UnitTest\GyandhaaraLibrary.UnitTest.csproj", "{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{EA6C6095-F178-4745-9E4A-61D1273C009D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.View", "Web\GyandhaaraLibrary.View\GyandhaaraLibrary.View.csproj", "{44E9E33E-143E-499B-B815-72C5F7E1B2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyandhaaraLibrary.ViewModel", "Web\GyandhaaraLibrary.ViewModel\GyandhaaraLibrary.ViewModel.csproj", "{43739E79-3C8C-4443-A6D6-8B7DC873857A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C85345D-4F1D-41D2-8C09-26E392EDB544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C85345D-4F1D-41D2-8C09-26E392EDB544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C85345D-4F1D-41D2-8C09-26E392EDB544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C85345D-4F1D-41D2-8C09-26E392EDB544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B126D7C2-1679-48C5-B028-703DA1175813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B126D7C2-1679-48C5-B028-703DA1175813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B126D7C2-1679-48C5-B028-703DA1175813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B126D7C2-1679-48C5-B028-703DA1175813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E9E33E-143E-499B-B815-72C5F7E1B2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E9E33E-143E-499B-B815-72C5F7E1B2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E9E33E-143E-499B-B815-72C5F7E1B2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E9E33E-143E-499B-B815-72C5F7E1B2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43739E79-3C8C-4443-A6D6-8B7DC873857A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43739E79-3C8C-4443-A6D6-8B7DC873857A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43739E79-3C8C-4443-A6D6-8B7DC873857A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43739E79-3C8C-4443-A6D6-8B7DC873857A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16BFF920-75BD-4C3D-8CB2-3C60F3B2AAC1} = {BC66F149-7F63-4998-A99C-5ED3869157EC}
+		{9C85345D-4F1D-41D2-8C09-26E392EDB544} = {BC66F149-7F63-4998-A99C-5ED3869157EC}
+		{3B3AB5E3-BF1A-47B2-A778-D2C98D4789AE} = {BC66F149-7F63-4998-A99C-5ED3869157EC}
+		{8A7E89C2-6ED2-4901-9D00-D93CDE1CCA8A} = {E967134B-E325-4F62-A063-5A8D000D36C0}
+		{B126D7C2-1679-48C5-B028-703DA1175813} = {E967134B-E325-4F62-A063-5A8D000D36C0}
+		{1B0EFAAA-D8A9-41F8-B50C-6CC1ABAA2E97} = {3AB0414B-D5D9-41B2-AA11-24A6A72DDBF4}
+		{44E9E33E-143E-499B-B815-72C5F7E1B2C6} = {EA6C6095-F178-4745-9E4A-61D1273C009D}
+		{43739E79-3C8C-4443-A6D6-8B7DC873857A} = {EA6C6095-F178-4745-9E4A-61D1273C009D}
+	EndGlobalSection
+EndGlobal

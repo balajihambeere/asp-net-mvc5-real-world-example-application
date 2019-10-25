@@ -1,0 +1,216 @@
+﻿@model GyandhaaraLibrary.ViewModel.CreateBookVM
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Isbn, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Isbn, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Edition, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Isbn, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TotalPages, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.TotalPages, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RackNumber, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.RackNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EntryDate, htmlAttributes: new { @class = "control-label col-sm-4" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.EntryDate, new { @class = "form-control datepicker", @id = "entryDatePicker", @type = "date" })
+                        @*@Html.EditorFor(model => model.EntryDate, new { htmlAttributes = new { @class = "form-control datepicker", @id = "entryDatePicker" } })*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PublishDate, htmlAttributes: new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-7">
+                        @Html.EditorFor(model => model.PublishDate, new { htmlAttributes = new { @class = "form-control datepicker", @id = "publishedDatePicker" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Publisher, htmlAttributes: new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-7">
+                        @Html.EditorFor(model => model.Publisher, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PurchasedBy, htmlAttributes: new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-7">
+                        @Html.EditorFor(model => model.PurchasedBy, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Genres, htmlAttributes: new { @class = "control-label col-sm-2" })
+
+                    <div class="col-sm-7">
+                        @if (Model.Genres.Count() > 0)
+                        {
+                            List<SelectListItem> items = new List<SelectListItem>();
+
+                            foreach (var item in Model.Genres)
+                            {
+                                items.Add(new SelectListItem
+                                {
+                                    Text = item.Name,
+                                    Value = item.GenreID.ToString()
+                                });
+                            }
+                            @Html.DropDownList("GenreID", (IEnumerable<SelectListItem>)items, "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("GenreID")
+                        }
+                        else
+                        {
+                            @Html.DropDownList("GenreID", Enumerable.Empty<SelectListItem>(), "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("GenreID")
+                        }
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="left" title="Add New Genre">
+                                <span class="control-label glyphicon glyphicon-plus" id="add-Genre"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="right" title="Update Genre">
+                                <span class="control-label glyphicon glyphicon-edit" id="update-Genre"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Suppliers, htmlAttributes: new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-7">
+                        @if (Model.Suppliers.Count() > 0)
+                        {
+                            List<SelectListItem> items = new List<SelectListItem>();
+
+                            foreach (var item in Model.Suppliers)
+                            {
+                                items.Add(new SelectListItem
+                                {
+                                    Text = item.Name,
+                                    Value = item.SupplierID.ToString()
+                                });
+                            }
+                            @Html.DropDownList("SupplierID", (IEnumerable<SelectListItem>)items, "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("SupplierID")
+                        }
+                        else
+                        {
+                            @Html.DropDownList("SupplierID", Enumerable.Empty<SelectListItem>(), "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("SupplierID")
+                        }
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="left" title="Add New Supplier">
+                                <span class="control-label glyphicon glyphicon-plus" id="add-Supplier"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="left" title="Update Supplier">
+                                <span class="control-label glyphicon glyphicon-edit" id="update-Supplier"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Languages, htmlAttributes: new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-7">
+                        @if (Model.Languages.Count() > 0)
+                        {
+                            List<SelectListItem> items = new List<SelectListItem>();
+
+                            foreach (var item in Model.Languages)
+                            {
+                                items.Add(new SelectListItem
+                                {
+                                    Text = item.Name,
+                                    Value = item.LanguageID.ToString()
+                                });
+                            }
+                            @Html.DropDownList("LanguageID", (IEnumerable<SelectListItem>)items, "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("LanguageID")
+                        }
+                        else
+                        {
+                            @Html.DropDownList("LanguageID", Enumerable.Empty<SelectListItem>(), "--select--", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("LanguageID")
+                        }
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="left" title="Add New Language">
+                                <span class="control-label glyphicon glyphicon-plus" id="add-Language"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="left" title="Update Language">
+                                <span class="control-label glyphicon glyphicon-edit" id="update-Language"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+                <label class="control-label" for="bookImage">Book Image:</label>
+                <input type="file" name="file" class="form-control" id="bookImage" />
+                <img class="img-responsive" src="css/images/book_guide_hero_books.png" />
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div style="text-align: center">
+                    <button type="submit" value="submit" class="btn btn-success">CREATE</button>
+                    <a href="main.html" class="btn btn-success" role="button">CANCEL</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

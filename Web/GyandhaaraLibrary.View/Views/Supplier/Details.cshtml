@@ -1,0 +1,117 @@
+﻿@model GyandhaaraLibrary.ViewModel.AddSupplierViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>Supplier Details </h4>
+<hr />
+
+<div class="row">
+    <div class="col-sm-4">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Name) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Name)
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Contact) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Contact)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Email) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Email)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Street) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Street)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.State) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.State)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.City) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.City)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Country) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Country)
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.ZipCode) :</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.ZipCode)
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            <a href="@Url.Action("Edit", "Supplier", new { id = Model.SupplierID })" cla class="btn btn-success" role="button">EDIT</a>
+            <a href="@Url.Action("Index", "Supplier")" cla class="btn btn-success" role="button">CANCEL</a>
+        </div>
+    </div>
+</div>

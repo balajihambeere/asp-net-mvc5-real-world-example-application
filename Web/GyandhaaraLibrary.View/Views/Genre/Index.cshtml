@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GyandhaaraLibrary.ViewModel.GenreVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row clearfix">
+    <div class="col-sm-4">
+        <div class="btn-group">
+            <div class="btn-group">
+                <a href="@Url.Action("Create", "Genre")" class="btn btn-success" role="button"><span class="control-label glyphicon glyphicon-plus" id="Span4"></span></a>
+                <a href="@Url.Action("Create", "Genre")" class="btn btn-success" role="button">New</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8"></div>
+</div>
+<hr />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                EDIT
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td>
+                    <a href="@Url.Action("Edit", "Genre", new {id = item.GenreID })">
+                        <span class="glyphicon glyphicon-edit" id="edit-product"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

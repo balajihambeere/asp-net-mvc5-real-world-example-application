@@ -1,0 +1,100 @@
+﻿@model GyandhaaraLibrary.ViewModel.Photo.ViewBookViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <h4>Book Details</h4>
+    <hr />
+    <div class="col-sm-4">
+        <img src="@Url.Action("GetImage", "Home", new { id = Model.PhotoID })" style="width:100%; height:330px;" />
+    </div>
+
+    <div class="col-sm-4">
+        <h4>  @Html.DisplayFor(model => model.Title)</h4>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.PublishDate): </strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.PublishDate)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Author): </strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Author)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Edition):</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Edition)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Publisher):</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Publisher)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Genre):</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Genre)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.Language):</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Language)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(model => model.TotalPages):</strong>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.TotalPages)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="LEND" class="btn btn-success" />
+                <a href="@Url.Action("Index", "Home")" cla class="btn btn-success" role="button">CANCEL</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+
+    </div>
+</div>
